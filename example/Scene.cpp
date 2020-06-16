@@ -20,8 +20,8 @@
 #include "Scene.h"
 #include <fstream>
 #include <sstream> 
-using namespace std;
-ofstream g_logfile;
+//using namespace std;
+//ofstream g_logfile;
 #include <time.h>
 
 #if defined(__linux__)
@@ -45,7 +45,8 @@ ofstream g_logfile;
 //--------------------------------------------------------------------------------------
 CFrmApplication* FrmCreateApplicationInstance()
 {
-    return new CSample( "Graphics" );
+    //return new CSample( "wave" );
+    return new CSample( "image" );
 }
 
 
@@ -63,9 +64,9 @@ CSample::CSample( const CHAR* strName ) : CFrmApplication( strName )
     m_pFont = NULL;
     m_FrameCount = 0;
     m_LastFPSDisplayTime = 0.0f;
-    g_logfile.open(LOG_FILE, ios::out|ios::app);
-    g_logfile << "file has been opened!" << std::endl;
-    LOG_INFO("11111", "bbbbbb");
+    //g_logfile.open(LOG_FILE, ios::out|ios::app);
+    //g_logfile << "file has been opened!" << std::endl;
+    //LOG_INFO("11111", "bbbbbb");
     FrmLogMessage("ERROR: This is an OpenGL program\n");
 }
 
@@ -95,7 +96,7 @@ void CSample::DrawScene(double time)
 
     last_time = time;
 
-    DrawGraphics();
+    DrawImage();
 }
 
 //--------------------------------------------------------------------------------------
@@ -138,7 +139,6 @@ BOOL CSample::Initialize()
     //FluidInitialize(1440, 2560);
     InitScene(1080, 1740);
 
-
     return TRUE;
 }
 
@@ -161,7 +161,7 @@ BOOL CSample::Resize()
 VOID CSample::Destroy()
 {
     //glDeleteProgram( g_hShaderProgram );
-    g_logfile.close();
+    //g_logfile.close();
 }
 
 
