@@ -22,18 +22,20 @@ FRM_ANDROID_PATH	:= $(FRM_PATH)/Android
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := FlowerFountain
+LOCAL_MODULE    := image
 
 LOCAL_SRC_FILES := $(SRC_PATH)/Scene.cpp \
                    $(SRC_PATH)/export.cpp \
                    $(SRC_PATH)/stb/stb_vorbis.c \
                    $(SRC)/firework.cpp \
+                   $(SRC)/filter.cpp \
                    $(SRC)/gl_render.cpp \
                    $(SRC)/image.cpp \
                    $(SRC)/lb_common.cpp \
                    $(SRC)/mesh.cpp \
                    $(SRC)/particle.cpp \
                    $(SRC)/raster.cpp \
+                   $(SRC)/ripple.cpp \
 				   $(FRM_OPENGL_PATH)/FrmFontGLES.cpp \
 				   $(FRM_OPENGL_PATH)/FrmMesh.cpp \
 				   $(FRM_OPENGL_PATH)/FrmPackedResourceGLES.cpp \
